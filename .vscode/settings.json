@@ -1,0 +1,49 @@
+{
+  // Configuración general de formato e indentación
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Configuración específica para JavaScript (web-ext)
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // Configuración de Prettier (para archivos frontend como HTML/CSS/JS)
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "always",
+
+  // Excluir archivos y directorios innecesarios en la búsqueda
+  "files.exclude": {
+    "**/vendor": true,
+    "**/node_modules": true,
+    "**/writable/cache": true,
+    "**/writable/logs": true
+  },
+
+  // Configuración de Emmet para facilitar el trabajo en HTML y JavaScript
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "html": "html"
+  },
+
+  // Otros ajustes opcionales
+  "files.associations": {
+    "*.html": "html",
+    "*.css": "css",
+    "*.js": "javascript",
+    "*.json": "json"
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="appName"></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css"
+    />
+    <script src="../libs/helpers.js"></script>
+    <script src="script.js"></script>
+    <style>
+      body {
+        width: 300px; /* Ancho fijo para el popup */
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ui container">
+      <h3 class="ui center aligned header" data-i18n="appName" id="title"></h3>
+      <hr />
+      <div class="ui link list relaxed divided" id="items"></div>
+      <h4 class="ui center aligned header">
+        <a href="#" id="open_options" data-i18n="manageButton"></a>
+      </h4>
+    </div>
+    <script src="../libs/localize.js"></script>
+  </body>
+</html>

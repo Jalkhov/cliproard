@@ -1,0 +1,66 @@
+{
+  "appName": {
+    "message": "ClipRoard",
+    "description": "The name of the browser extension"
+  },
+  "appDescription": {
+    "message": "Transform your clipboard management with Cliproard. Quickly store and access saved items to streamline your workflow and boost your productivity.",
+    "description": "Description of the browser extension"
+  },
+  "manageButton": {
+    "message": "Manage",
+    "description": "Text displayed on the Manage button"
+  },
+  "titleItems": {
+    "message": "ClipRoard Items",
+    "description": "Title for the ClipRoard items section"
+  },
+  "contentLabel": {
+    "message": "Content",
+    "description": "Label for the content input field"
+  },
+  "aliasLabel": {
+    "message": "Alias",
+    "description": "Label for the alias input field"
+  },
+  "contentPlaceholder": {
+    "message": "ing.email@gmail.com",
+    "description": "Placeholder text for the content input field"
+  },
+  "aliasPlaceholder": {
+    "message": "Work email",
+    "description": "Placeholder text for the alias input field"
+  },
+  "addButton": {
+    "message": "Add",
+    "description": "Text displayed on the Add button"
+  },
+  "cleanButton": {
+    "message": "Clear all",
+    "description": "Text displayed on the Clear all button"
+  },
+  "deleteButton": {
+    "message": "Delete",
+    "description": "Text displayed on the Delete button"
+  },
+  "titleSettings": {
+    "message": "Settings",
+    "description": "Title for the ClipRoard settings section"
+  },
+  "labelVisibleItems": {
+    "message": "Visible items",
+    "description": "Label for the number of visible items setting"
+  },
+  "noItems": {
+    "message": "No items registered",
+    "description": "Message displayed when there are no items registered"
+  },
+  "optionsTitle": {
+    "message": "ClipRoard Options",
+    "description": "Title displayed in options page tab"
+  },
+  "insertFrom": {
+    "message": "Insert from",
+    "description": "Title displayed in contextual menu"
+  }
+}

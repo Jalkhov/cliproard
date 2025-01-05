@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title data-i18n="optionsTitle"></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css"
+    />
+    <script src="../libs/helpers.js"></script>
+    <script src="options.js"></script>
+  </head>
+  <body>
+    <div class="ui container" style="margin-top: 20px">
+      <div class="ui stackable two column grid">
+        <div class="column">
+          <div class="ui segment">
+            <h2 class="ui center aligned header" data-i18n="titleItems"></h2>
+
+            <div class="ui equal width form">
+              <div class="fields">
+                <div class="field">
+                  <label data-i18n="contentLabel">Contenido</label>
+                  <input
+                    type="text"
+                    id="contenido"
+                    placeholder=""
+                    data-i18n="contentPlaceholder"
+                  />
+                </div>
+                <div class="field">
+                  <label>Alias</label>
+                  <input
+                    type="text"
+                    id="alias"
+                    placeholder=""
+                    data-i18n="aliasPlaceholder"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                id="add_item_button"
+                class="ui primary button"
+                data-i18n="addButton"
+              ></button>
+              <button
+                type="button"
+                id="clear_all"
+                class="ui red button"
+                data-i18n="cleanButton"
+              ></button>
+            </div>
+            <table id="clipboard_items_table" class="ui compact celled table">
+              <thead>
+                <tr>
+                  <th scope="col" data-i18n="contentLabel"></th>
+                  <th scope="col" data-i18n="aliasLabel"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Los elementos se insertarán aquí dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui segment">
+            <h2 class="ui center aligned header" data-i18n="titleSettings"></h2>
+            <div class="ui form">
+              <div class="inline field">
+                <label data-i18n="labelVisibleItems"></label>
+                <input type="number" id="visible_elements" />
+              </div>
+              <!--
+              <div class="field">
+                <label>Last Name</label>
+                <input type="text" name="last-name" placeholder="Last Name" />
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" tabindex="0" class="hidden" />
+                  <label>I agree to the Terms and Conditions</label>
+                </div>
+              </div>
+              <button class="ui button" type="submit">Submit</button>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../libs/localize.js"></script>
+  </body>
+</html>

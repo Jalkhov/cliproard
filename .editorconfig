@@ -1,0 +1,35 @@
+# .editorconfig for web-ext project
+
+# Top-most EditorConfig file
+root = true
+
+# For all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript files (including JSON and manifest)
+[*.{js,json}]
+indent_style = space
+indent_size = 2
+
+# HTML files
+[*.html]
+indent_style = space
+indent_size = 2
+
+# CSS / SCSS / LESS files
+[*.{css,scss,less}]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+max_line_length = 80
+
+# YAML files (e.g., `manifest.yml` or other configuration files)
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2

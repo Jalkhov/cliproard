@@ -1,0 +1,6 @@
+{
+  "release-type": "node",
+  "package-name": "cliproard",
+  "bump-minor-pre-major": true,
+  "include-v-in-tag": true
+}

@@ -1,0 +1,66 @@
+{
+  "appName": {
+    "message": "ClipRoard",
+    "description": "El nombre de la extensión del navegador"
+  },
+  "appDescription": {
+    "message": "Transforma tu gestión del portapapeles con Cliproard. Almacena y accede rápidamente a elementos guardados para optimizar tu flujo de trabajo y potenciar tu productividad.",
+    "description": "Description of the browser extension"
+  },
+  "manageButton": {
+    "message": "Gestionar",
+    "description": "Texto mostrado en el botón Gestionar"
+  },
+  "titleItems": {
+    "message": "Elementos de ClipRoard",
+    "description": "Título de la sección de elementos de ClipRoard"
+  },
+  "contentLabel": {
+    "message": "Contenido",
+    "description": "Etiqueta para el campo de entrada de contenido"
+  },
+  "aliasLabel": {
+    "message": "Alias",
+    "description": "Etiqueta para el campo de entrada de alias"
+  },
+  "contentPlaceholder": {
+    "message": "ing.email@gmail.com",
+    "description": "Texto de marcador de posición para el campo de entrada de contenido"
+  },
+  "aliasPlaceholder": {
+    "message": "Correo de trabajo",
+    "description": "Texto de marcador de posición para el campo de entrada de alias"
+  },
+  "addButton": {
+    "message": "Agregar",
+    "description": "Texto mostrado en el botón Agregar"
+  },
+  "cleanButton": {
+    "message": "Limpiar todo",
+    "description": "Texto mostrado en el botón Limpiar todo"
+  },
+  "deleteButton": {
+    "message": "Eliminar",
+    "description": "Texto mostrado en el botón Eliminar"
+  },
+  "titleSettings": {
+    "message": "Configuración",
+    "description": "Título de la sección de configuración de ClipRoard"
+  },
+  "labelVisibleItems": {
+    "message": "Elementos visibles",
+    "description": "Etiqueta para la configuración del número de elementos visibles"
+  },
+  "noItems": {
+    "message": "Sin elementos registrados",
+    "description": "Mensaje que aparece cuando no hay elementos registrados"
+  },
+  "optionsTitle": {
+    "message": "Opciones de ClipRoard",
+    "description": "Título mostrado en la pestaña de la página de opciones"
+  },
+  "insertFrom": {
+    "message": "Insertar desde",
+    "description": "Título mostrado en el menú contextual"
+  }
+}
