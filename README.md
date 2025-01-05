@@ -1,4 +1,4 @@
-# cliproardd
+# ClipRoard
 
 cliproardd is a browser extension that allows users to save frequently used text elements, manage them conveniently, and insert them into any editable field with a right-click. It's a versatile tool for improving productivity and efficiency when working with repetitive text.
 

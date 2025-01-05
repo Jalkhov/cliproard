@@ -7,22 +7,14 @@
     "build": "node scripts/build.js",
     "upload": "npm run build && web-ext sign --use-submission-api --api-key=$AMO_API_KEY --api-secret=$AMO_API_SECRET --source-dir=src/ --channel=listed",
     "start": "web-ext run --source-dir src",
-    "commit-msg": "npx --no-install commitlint --edit $1",
     "release": "release-please release --default-branch=main",
     "version": "release-please version"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "keywords": [
     "clipboard"
   ],
   "author": "Jalkhov",
   "devDependencies": {
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
     "release-please": "^15.0.0",
     "web-ext": "^7.0.0"
   },
