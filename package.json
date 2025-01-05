@@ -1,6 +1,6 @@
 {
   "name": "cliproard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clipboard manager",
   "main": "background.js",
   "scripts": {
@@ -15,6 +15,7 @@
   ],
   "author": "Jalkhov",
   "devDependencies": {
+    "archiver": "^7.0.1",
     "release-please": "^15.0.0",
     "web-ext": "^7.0.0"
   },

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "ClipRoard",
   "description": "Transform your clipboard management with Cliproard. Quickly store and access saved items to streamline your workflow and boost your productivity.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": {
     "name": "Mozilla Public License 2.0",
     "url": "https://www.mozilla.org/MPL/2.0/"
