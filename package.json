@@ -4,19 +4,14 @@
   "description": "Clipboard manager",
   "main": "background.js",
   "scripts": {
-    "build": "node scripts/build.js",
-    "upload": "npm run build && web-ext sign --use-submission-api --api-key=$AMO_API_KEY --api-secret=$AMO_API_SECRET --source-dir=src/ --channel=listed",
-    "start": "web-ext run --source-dir src",
-    "release": "release-please release --default-branch=main",
-    "version": "release-please version"
+    "build": "web-ext build --source-dir=src",
+    "start": "web-ext run --source-dir src"
   },
   "keywords": [
     "clipboard"
   ],
   "author": "Jalkhov",
   "devDependencies": {
-    "archiver": "^7.0.1",
-    "release-please": "^15.0.0",
     "web-ext": "^7.0.0"
   },
   "license": "MIT"
