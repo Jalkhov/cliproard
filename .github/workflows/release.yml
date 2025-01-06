@@ -1,3 +1,5 @@
+name: Release
+
 on:
   push:
     branches:
@@ -8,19 +10,25 @@ permissions:
   pull-requests: write
   issues: write
 
-name: release-please
-
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
     steps:
-      # Paso 1: Checkout del repositorio
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      # Paso 2: Release-Please: crea la nueva versión y changelog
+      - uses: actions/checkout@v3 # Usa la versión 3
       - name: Run release-please
+        id: release
         uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           release-type: simple
+      - name: Create Release
+        if: ${{ steps.release.outputs.release_created }} # Condición crucial
+        uses: ncipollo/release-action@v1 # o actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.release.outputs.tag_name }}
+          release_name: ${{ steps.release.outputs.release_name }}
+          body: ${{ steps.release.outputs.body }}
+          draft: false
+          prerelease: ${{ steps.release.outputs.prerelease }}
