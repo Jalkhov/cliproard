@@ -23,7 +23,10 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: simple
+          release-type: node
+          extra-files: |
+            src/manifest.json
+            package.json
 
       # Paso 3: Crear el tag del release
       - name: Create release tag
