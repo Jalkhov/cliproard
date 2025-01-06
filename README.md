@@ -52,26 +52,6 @@ The extension requires the following permissions:
 - `clipboardRead`: To read data from the clipboard.
 - `contextMenus`: To add the context menu for element insertion.
 
-## Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Jalkhov/cliproard.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd cliproard
-   ```
-3. Install dependencies (if any):
-   ```bash
-   npm install
-   ```
-4. Load the extension manually as described in the "Manual Installation" section.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Contributions
 
 Contributions are welcome! Feel free to open issues, suggest features, or submit pull requests.
