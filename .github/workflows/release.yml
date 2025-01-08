@@ -1,4 +1,4 @@
-name: Release and Publish Firefox Extension
+name: Release and Build Firefox Extension
 
 on:
   push:
@@ -6,12 +6,11 @@ on:
       - master
 
 permissions:
-  contents: write
+  contents: read # Only read access is needed for building and creating PR
   pull-requests: write
-  issues: write
 
 jobs:
-  release:
+  build_and_release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,57 +19,13 @@ jobs:
           node-version: 16
       - run: npm ci
       - name: Build extension
-        run: npm run build # Esto genera el xpi en web-ext-artifacts/
-      - name: Install web-ext
-        run: npm install --global web-ext
-      - uses: actions/upload-artifact@v3
+        run: npm run build # Assumes this builds the xpi in web-ext-artifacts/
+      - name: Upload unsigned extension as artifact
+        uses: actions/upload-artifact@v3
         with:
           name: extension-unsigned
-          path: web-ext-artifacts/*.xpi # Guardamos el xpi sin firmar
-      - name: Run release-please
-        id: release_please
-        uses: googleapis/release-please-action@v4
+          path: web-ext-artifacts/*.xpi # Upload all unsigned .xpi files
+      - uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           release-type: simple
-      - name: Create GitHub Release
-        if: ${{ steps.release_please.outputs.release_created }}
-        uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.release_please.outputs.tag_name }}
-          release_name: ${{ steps.release_please.outputs.release_name }}
-          body: ${{ steps.release_please.outputs.body }}
-          draft: false
-          prerelease: ${{ steps.release_please.outputs.prerelease }}
-      - name: Sign Extension
-        if: ${{ steps.release_please.outputs.release_created }}
-        env:
-          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
-          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
-        run: |
-          mkdir signed-artifacts
-          mv web-ext-artifacts/*.xpi signed-artifacts/ # Movemos el xpi sin firmar a la carpeta signed-artifacts
-          web-ext sign \
-            --source-dir src/ \ # Usamos src como source-dir para web-ext sign
-            --artifacts-dir signed-artifacts/ \
-            --api-key "$AMO_API_KEY" \
-            --api-secret "$AMO_API_SECRET"
-      - name: Upload to AMO
-        if: ${{ steps.release_please.outputs.release_created }}
-        env:
-          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
-          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
-        run: |
-          web-ext submit \
-            --source-dir signed-artifacts/*.xpi \
-            --api-key "$AMO_API_KEY" \
-            --api-secret "$AMO_API_SECRET" \
-            --channel listed
-      - name: Upload Signed Artifact
-        if: ${{ steps.release_please.outputs.release_created }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: extension-signed
-          path: signed-artifacts/*.xpi
