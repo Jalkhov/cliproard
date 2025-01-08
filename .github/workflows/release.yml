@@ -21,11 +21,11 @@ jobs:
       - name: Build extension
         run: npm run build # Assumes this builds the zip in web-ext-artifacts/
       - name: Upload unsigned extension as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: extension-unsigned
           path: web-ext-artifacts/*.zip # Upload all unsigned .zip files
       - uses: googleapis/release-please-action@v4
         with:
+          command: manifest
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: simple
