@@ -19,12 +19,12 @@ jobs:
           node-version: 16
       - run: npm ci
       - name: Build extension
-        run: npm run build # Assumes this builds the xpi in web-ext-artifacts/
+        run: npm run build # Assumes this builds the zip in web-ext-artifacts/
       - name: Upload unsigned extension as artifact
         uses: actions/upload-artifact@v3
         with:
           name: extension-unsigned
-          path: web-ext-artifacts/*.xpi # Upload all unsigned .xpi files
+          path: web-ext-artifacts/*.zip # Upload all unsigned .zip files
       - uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
