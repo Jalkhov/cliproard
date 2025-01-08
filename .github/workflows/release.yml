@@ -20,11 +20,13 @@ jobs:
           node-version: 16
       - run: npm ci
       - name: Build extension
-        run: npm run build
+        run: npm run build # Esto genera el xpi en web-ext-artifacts/
+      - name: Install web-ext
+        run: npm install --global web-ext
       - uses: actions/upload-artifact@v3
         with:
-          name: extension
-          path: web-ext-artifacts/*.xpi
+          name: extension-unsigned
+          path: web-ext-artifacts/*.xpi # Guardamos el xpi sin firmar
       - name: Run release-please
         id: release_please
         uses: googleapis/release-please-action@v4
@@ -42,11 +44,33 @@ jobs:
           body: ${{ steps.release_please.outputs.body }}
           draft: false
           prerelease: ${{ steps.release_please.outputs.prerelease }}
-      - name: Sign and Upload Firefox Addon
+      - name: Sign Extension
         if: ${{ steps.release_please.outputs.release_created }}
-        uses: mozilla/sign-addon@v2
+        env:
+          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
+          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+        run: |
+          mkdir signed-artifacts
+          mv web-ext-artifacts/*.xpi signed-artifacts/ # Movemos el xpi sin firmar a la carpeta signed-artifacts
+          web-ext sign \
+            --source-dir src/ \ # Usamos src como source-dir para web-ext sign
+            --artifacts-dir signed-artifacts/ \
+            --api-key "$AMO_API_KEY" \
+            --api-secret "$AMO_API_SECRET"
+      - name: Upload to AMO
+        if: ${{ steps.release_please.outputs.release_created }}
+        env:
+          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
+          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+        run: |
+          web-ext submit \
+            --source-dir signed-artifacts/*.xpi \
+            --api-key "$AMO_API_KEY" \
+            --api-secret "$AMO_API_SECRET" \
+            --channel listed
+      - name: Upload Signed Artifact
+        if: ${{ steps.release_please.outputs.release_created }}
+        uses: actions/upload-artifact@v3
         with:
-          api-key: ${{ secrets.AMO_API_KEY }}
-          api-secret: ${{ secrets.AMO_API_SECRET }}
-          xpi-path: web-ext-artifacts/*.xpi
-          upload: true
+          name: extension-signed
+          path: signed-artifacts/*.xpi
