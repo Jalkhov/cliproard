@@ -1,7 +1,7 @@
 {
   "name": "cliproard",
   "version": "1.0.1",
-  "description": "Clipboard manager",
+  "description": "Clipboard helper",
   "main": "background.js",
   "scripts": {
     "build": "web-ext build --source-dir=src",
@@ -14,5 +14,5 @@
   "devDependencies": {
     "web-ext": "^7.0.0"
   },
-  "license": "MIT"
+  "license": "MPL-2.0"
 }
