@@ -16,15 +16,6 @@
     "editor.formatOnSave": true
   },
 
-  // Configuración de Prettier (para archivos frontend como HTML/CSS/JS)
-  "prettier.printWidth": 80,
-  "prettier.tabWidth": 2,
-  "prettier.useTabs": false,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
-  "prettier.bracketSpacing": true,
-  "prettier.arrowParens": "always",
-
   // Excluir archivos y directorios innecesarios en la búsqueda
   "files.exclude": {
     "**/vendor": true,
