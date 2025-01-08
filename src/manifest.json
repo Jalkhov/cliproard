@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "ClipRoard",
-  "description": "Transform your clipboard management with Cliproard. Quickly store and access saved items to streamline your workflow and boost your productivity.",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDescription__",
   "version": "1.0.1",
   "license": {
     "name": "Mozilla Public License 2.0",
