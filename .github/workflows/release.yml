@@ -27,5 +27,4 @@ jobs:
           path: web-ext-artifacts/*.zip # Upload all unsigned .zip files
       - uses: googleapis/release-please-action@v4
         with:
-          command: manifest
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
