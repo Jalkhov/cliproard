@@ -22,13 +22,17 @@
   </head>
   <body>
     <div class="ui container">
-      <h3 class="ui center aligned header" data-i18n="appName" id="title"></h3>
+      <div class="ui center aligned header">
+        <h3 style="display: inline" data-i18n="appName" id="title"></h3>
+        <small>v<span id="version"></span></small>
+      </div>
       <hr />
       <div class="ui link list relaxed divided" id="items"></div>
       <h4 class="ui center aligned header">
         <a href="#" id="open_options" data-i18n="manageButton"></a>
       </h4>
     </div>
+    <script src="version.js"></script>
     <script src="../libs/localize.js"></script>
   </body>
 </html>
